@@ -87,7 +87,7 @@ function createSiteConfig(remoteConfig) {
     return {
         seo: {
             titulo: 'Marco Antonio',
-            descripcion: 'Celebremos los éxitos y la vida de Marco Antonio - 08 de agosto de 2027',
+            descripcion: 'Acompáñame a celebrar el cumpleaños de Marco Antonio - 08 de agosto de 2027',
             autor: 'Two Design',
             ...externalConfig.seo,
             ...normalizedRemoteConfig.seo

@@ -41,7 +41,7 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
-.itinerary-title, .event-titulo, .trayectoria-title, .wishes-title {
+.itinerary-title, .event-titulo, .wishes-title {
    font-family: var(--cursive) !important;
     background-size: 200% auto;
     -webkit-background-clip: text !important;
@@ -1058,8 +1058,7 @@ html.js-anim .names-editorial.fade-in-element.is-visible {
 .dresscode-title,
 .media-share-title,
 .wishes-title,
-.rsvp-title, 
-.trayectoria-title{
+.rsvp-title {
     margin: 0 0 14px;
     font-family: var(--title);
     font-size: var(--title-size);
@@ -2242,140 +2241,12 @@ html.js-anim .section-separador.visible .separador-foto-img {
     color: var(--rose-deep);
 }
 
-/* Frase + trayectoria */
+/* Frase final */
 .frase-texto {
     margin: 0;
     font-family: var(--cursive);
     font-size: clamp(2rem, 8vw, 3rem);
     line-height: 1.2;
-}
-
-.trayectoria-section {
-    min-height: 56vh;
-    padding: clamp(56px, 9vh, 92px) 18px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.trayectoria-fondo {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 14% 20%, rgba(212, 228, 240, 0.46) 0%, rgba(212, 228, 240, 0) 46%),
-        radial-gradient(circle at 86% 18%, rgba(200, 216, 232, 0.34) 0%, rgba(200, 216, 232, 0) 50%),
-        radial-gradient(circle at 74% 84%, rgba(238, 244, 248, 0.4) 0%, rgba(238, 244, 248, 0) 52%),
-        linear-gradient(152deg, #FAFAFA 0%, #EEF4F8 52%, #F8F8F6 100%);
-}
-
-.trayectoria-inner {
-    position: relative;
-    z-index: 2;
-    width: min(1020px, 100%);
-    margin: 0 auto;
-}
-
-.trayectoria-inner .playlist-title {
-    text-align: center;
-    margin-bottom: 22px;
-}
-
-.trayectoria-text {
-    width: min(680px, 100%);
-    margin: 0 auto 24px;
-    color: rgba(248, 252, 255, 0.9);
-    font-family: var(--body);
-    font-size: clamp(1rem, 2.4vw, 1.18rem);
-    line-height: 1.55;
-    text-align: center;
-}
-
-.trayectoria-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-}
-
-.trayectoria-item {
-    margin: 0;
-    border: 1px solid var(--line);
-    box-shadow: 0 10px 24px rgba(13, 40, 64, 0.12);
-    background: var(--white);
-    overflow: hidden;
-}
-
-.trayectoria-open {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.trayectoria-item img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: center;
-}
-
-.trayectoria-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(8, 10, 14, 0.92);
-}
-
-.trayectoria-lightbox.active {
-    display: flex;
-}
-
-.trayectoria-lightbox img {
-    width: min(92vw, 980px);
-    max-height: 86vh;
-    object-fit: contain;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.trayectoria-lightbox-close,
-.trayectoria-lightbox-nav {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(12, 18, 26, 0.66);
-    color: #f8f8f6;
-    cursor: pointer;
-}
-
-.trayectoria-lightbox-close {
-    top: 22px;
-    right: 24px;
-    width: 42px;
-    height: 42px;
-    font-size: 1.6rem;
-    line-height: 1;
-}
-
-.trayectoria-lightbox-nav {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 56px;
-    font-size: 1.5rem;
-}
-
-.trayectoria-lightbox-nav.prev {
-    left: 18px;
-}
-
-.trayectoria-lightbox-nav.next {
-    right: 18px;
 }
 
 /* Footer */
@@ -2950,17 +2821,6 @@ html.js-anim .section.visible :is(.event-icon, .playlist-icon, .media-share-icon
 }
 
 
-@media (max-width: 768px) {
-    .trayectoria-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .trayectoria-lightbox-nav {
-        width: 38px;
-        height: 50px;
-    }
-}
-
 .invitado-tarjeta {
     background: url("images/FB.png") center/cover no-repeat;
     border: 6px solid transparent;
@@ -3015,8 +2875,7 @@ html.js-anim .section.visible :is(.event-icon, .playlist-icon, .media-share-icon
 #agenda .itinerary-title,
 #agenda .itinerary-inicial,
 #agenda .itinerary-resto,
-#agenda .itinerary-icon i,
-.trayectoria-title {
+#agenda .itinerary-icon i {
     background: linear-gradient(120deg, #F8FCFF 0%, #EAF3FA 24%, #D8E8F4 50%, #EAF3FA 76%, #F8FCFF 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -3039,7 +2898,6 @@ html.js-anim .section.visible :is(.event-icon, .playlist-icon, .media-share-icon
 #bendiciones,
 #events,
 #dresscode,
-#trayectoria-laboral,
 #playlist,
 #wishes-section,
 #rsvp-section,
@@ -3056,7 +2914,6 @@ html.js-anim .section.visible :is(.event-icon, .playlist-icon, .media-share-icon
 #agenda::before,
 #events .events-fondo,
 #dresscode .dresscode-fondo,
-#trayectoria-laboral .trayectoria-fondo,
 #playlist .events-fondo,
 #wishes-section .wishes-fondo,
 #rsvp-section .rsvp-fondo,
@@ -3065,7 +2922,6 @@ html.js-anim .section.visible :is(.event-icon, .playlist-icon, .media-share-icon
 #bendiciones .events-overlay,
 #events .events-overlay,
 #dresscode .events-overlay,
-#trayectoria-laboral .events-overlay,
 #playlist .events-overlay,
 #wishes-section .events-overlay,
 #rsvp-section .events-overlay,
@@ -3076,15 +2932,6 @@ html.js-anim .section.visible :is(.event-icon, .playlist-icon, .media-share-icon
 
 #footer {
     background-color: transparent !important;
-}
-
-#trayectoria-laboral .trayectoria-title-inicial,
-#trayectoria-laboral .trayectoria-title-resto {
-    background: linear-gradient(120deg, #F8FCFF 0%, #EAF3FA 24%, #D8E8F4 50%, #EAF3FA 76%, #F8FCFF 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
 }
 
 /* Replicar estilo Agenda en Events y Wishes */
@@ -3107,7 +2954,8 @@ html.js-anim .section.visible :is(.event-icon, .playlist-icon, .media-share-icon
 #events .event-resto,
 #events .event-time,
 #events .event-lugar,
-#events .event-direccion, #trayectoria-laboral .trayectoria-title, #wishes-section .wishes-title{
+#events .event-direccion,
+#wishes-section .wishes-title {
     background: linear-gradient(120deg, #FFFFFF 0%, #F3F8FC 22%, #E3EEF7 50%, #F3F8FC 78%, #FFFFFF 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
