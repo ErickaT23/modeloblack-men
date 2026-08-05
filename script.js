@@ -717,7 +717,7 @@ function initCountdown() {
 }
 
 function getEventDateFromConfig() {
-    return new Date('2027-08-08T19:00:00').getTime();
+    return new Date('2027-08-08T18:00:00').getTime();
 }
 
 function initSectionSeparadorRotativo() {
@@ -1174,7 +1174,7 @@ const translations = {
     rsvp_final_si: "Gracias por confirmar tu asistencia. Este mensaje quedará visible de forma permanente.",
     wa_si: "Hola! Soy {nombre}, confirmo mi asistencia a la celebración de Marco Antonio el 08 de agosto. Asistiré con {pases} {pases_label}.",
     wa_no: "Hola! Soy {nombre}, lamentablemente no podré asistir a la celebración de Marco Antonio el 08 de agosto.",
-    calendar_url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumplea%C3%B1os%20de%20Marco%20Antonio&dates=20270808T190000/20270809T000000&ctz=America/Guatemala&details=Acomp%C3%A1%C3%B1ame%20a%20celebrar%20mi%20cumplea%C3%B1os.&location=KM%2081.1%20Ruta%20Nacional%2014%2C%20Alotenango%2C%20Sacatep%C3%A9quez.",
+    calendar_url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumplea%C3%B1os%20de%20Marco%20Antonio&dates=20270808T180000/20270809T000000&ctz=America/Guatemala&details=Acomp%C3%A1%C3%B1ame%20a%20celebrar%20mi%20cumplea%C3%B1os.&location=KM%2081.1%20Ruta%20Nacional%2014%2C%20Alotenango%2C%20Sacatep%C3%A9quez.",
     frase_final: "Los mejores cumpleaños se viven entre risas, abrazos y personas especiales. Gracias por ser parte de este día.",
   },
 
@@ -1238,7 +1238,7 @@ const translations = {
     rsvp_final_si: "Thank you for confirming your attendance. This message will remain permanently visible.",
     wa_si: "Hi! This is {nombre}. I'm happy to confirm my attendance at Marco Antonio's celebration on August 8th. I'll be attending with {pases} {pases_label}.",
     wa_no: "Hi! This is {nombre}. Unfortunately, I won't be able to attend Marco Antonio's celebration on August 8th.",
-    calendar_url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Marco%20Antonio%27s%20Birthday&dates=20270808T190000/20270809T000000&ctz=America/Guatemala&details=Join%20me%20to%20celebrate%20my%20birthday.&location=KM%2081.1%20Ruta%20Nacional%2014%2C%20Alotenango%2C%20Sacatep%C3%A9quez.",
+    calendar_url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Marco%20Antonio%27s%20Birthday&dates=20270808T180000/20270809T000000&ctz=America/Guatemala&details=Join%20me%20to%20celebrate%20my%20birthday.&location=KM%2081.1%20Ruta%20Nacional%2014%2C%20Alotenango%2C%20Sacatep%C3%A9quez.",
     frase_final: "The best birthdays are filled with laughter, hugs, and special people. Thank you for being part of this day.",
   }
 };
