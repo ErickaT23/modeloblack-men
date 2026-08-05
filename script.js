@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     initPortada();
     initScrollAnimations();
     initSectionSeparadorRotativo();
-    initTrayectoriaLightbox();
     initCountdown();
     initRSVP();
     initGiftModal();
@@ -35,7 +34,7 @@ const externalConfig = window.config || {};
 function resolveEventId() {
     const eventConfig = externalConfig.event || {};
     const eventIdParam = String(eventConfig.eventIdParam || 'eventId').trim() || 'eventId';
-    const defaultEventId = String(eventConfig.defaultEventId || 'promocion-anthonyjr-2026').trim() || 'promocion-anthonyjr-2026';
+    const defaultEventId = String(eventConfig.defaultEventId || 'cumple-marco-antonio-2027').trim() || 'cumple-marco-antonio-2027';
     const params = new URLSearchParams(window.location.search || '');
     const paramValue = String(params.get(eventIdParam) || '').trim();
     const eventId = paramValue || defaultEventId;
@@ -133,7 +132,7 @@ function createSiteConfig(remoteConfig) {
             ...normalizedRemoteConfig.textos
         },
         footer: {
-            hashtag: '#AnthonyJrLopez',
+            hashtag: '#MarcoAntonio2027',
             instagramUrl: 'https://instagram.com/thetwodesign',
             facebookUrl: 'https://facebook.com/thetwodesign',
             marcaTexto: 'Diseño',
@@ -744,78 +743,6 @@ function initSectionSeparadorRotativo() {
     }, 3200);
 }
 
-function initTrayectoriaLightbox() {
-    const buttons = Array.from(document.querySelectorAll('.trayectoria-open'));
-    const lightbox = document.getElementById('trayectoria-lightbox');
-    const imageEl = document.getElementById('trayectoria-lightbox-img');
-    const closeBtn = document.getElementById('trayectoria-lightbox-close');
-    const prevBtn = document.getElementById('trayectoria-prev');
-    const nextBtn = document.getElementById('trayectoria-next');
-
-    if (!buttons.length || !lightbox || !imageEl || !closeBtn || !prevBtn || !nextBtn) return;
-
-    const images = buttons.map(function(button) {
-        const img = button.querySelector('img');
-        return {
-            src: img ? img.getAttribute('src') : '',
-            alt: img ? img.getAttribute('alt') : 'Foto de trayectoria'
-        };
-    }).filter(function(item) {
-        return Boolean(item.src);
-    });
-
-    if (!images.length) return;
-
-    let currentIndex = 0;
-
-    function render(index) {
-        const total = images.length;
-        currentIndex = (index + total) % total;
-        imageEl.src = images[currentIndex].src;
-        imageEl.alt = images[currentIndex].alt;
-    }
-
-    function open(index) {
-        render(index);
-        lightbox.classList.add('active');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function close() {
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    buttons.forEach(function(button, index) {
-        button.addEventListener('click', function() {
-            open(index);
-        });
-    });
-
-    prevBtn.addEventListener('click', function() {
-        render(currentIndex - 1);
-    });
-
-    nextBtn.addEventListener('click', function() {
-        render(currentIndex + 1);
-    });
-
-    closeBtn.addEventListener('click', close);
-
-    lightbox.addEventListener('click', function(event) {
-        if (event.target === lightbox) close();
-    });
-
-    document.addEventListener('keydown', function(event) {
-        if (!lightbox.classList.contains('active')) return;
-        if (event.key === 'Escape') close();
-        if (event.key === 'ArrowLeft') render(currentIndex - 1);
-        if (event.key === 'ArrowRight') render(currentIndex + 1);
-    });
-}
-
 function initRSVP() {
     const form = document.getElementById('rsvp-form');
     const successMessage = document.getElementById('rsvp-success');
@@ -1211,11 +1138,9 @@ const translations = {
     recepcion_titulo: "Recepción",
     btn_location: "Ver ubicación",
     dresscode_title: "Código de vestimenta",
-    dresscode_text: "Esta noche merece tu mejor versión. Te invitamos a vestir formal en tono negro para celebrar juntos este gran logro.",
+    dresscode_text: "Te invitamos a vestir elegante en tono negro para celebrar juntos esta noche tan especial.",
     gifts_title: "Lluvia de Sobres",
     gifts_text: "Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, contaremos con lluvia de sobres.",
-    trayectoria_title: "Mi Trayectoria",
-    trayectoria_text: "Un recorrido de estos últimos años llenos de experiencias, crecimiento y dedicación.",
     playlist_title: "Playlist",
     playlist_text: "Ayúdame a crear la playlist perfecta para esta noche. Agrega esa canción que no puede faltar.",
     btn_playlist: "Agregar canción",
@@ -1230,7 +1155,7 @@ const translations = {
     btn_wish_submit: "Enviar deseo",
     wishes_empty: "Aún no hay deseos. Sé el primero en dejarme uno.",
     rsvp_title: "Confirmar Asistencia",
-    rsvp_intro: "Tu presencia hará este día aún más especial. Por favor confirma tu asistencia antes del 24 de Junio.",
+    rsvp_intro: "Tu presencia hará esta celebración aún más especial. Por favor confirma tu asistencia.",
     rsvp_label_nombre: "Nombre del invitado",
     rsvp_label_asistencia: "Asistirás",
     rsvp_si: "Sí, con mucho gusto",
@@ -1250,7 +1175,7 @@ const translations = {
     wa_si: "Hola! Soy {nombre}, confirmo mi asistencia a la celebración de Marco Antonio el 08 de agosto. Asistiré con {pases} {pases_label}.",
     wa_no: "Hola! Soy {nombre}, lamentablemente no podré asistir a la celebración de Marco Antonio el 08 de agosto.",
     calendar_url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumplea%C3%B1os%20de%20Marco%20Antonio&dates=20270808T190000/20270809T000000&ctz=America/Guatemala&details=Acomp%C3%A1%C3%B1ame%20a%20celebrar%20mi%20cumplea%C3%B1os.&location=KM%2081.1%20Ruta%20Nacional%2014%2C%20Alotenango%2C%20Sacatep%C3%A9quez.",
-    frase_final: "La excelencia no se anuncia, se demuestra - y ahora viene la mejor parte: ¡celebrarlo juntos!",
+    frase_final: "Los mejores cumpleaños se viven entre risas, abrazos y personas especiales. Gracias por ser parte de este día.",
   },
 
   en: {
@@ -1277,11 +1202,9 @@ const translations = {
     recepcion_titulo: "Reception",
     btn_location: "View location",
     dresscode_title: "Dress Code",
-    dresscode_text: "Tonight calls for your finest. We invite you to dress in formal black — because every great achievement deserves a room that looks the part.",
+    dresscode_text: "We invite you to dress elegantly in black to celebrate this special night together.",
     gifts_title: "Envelope Shower",
     gifts_text: "Your presence is the greatest gift of all. Should you wish to offer a personal gesture, we'll have an envelope shower to receive your kind tokens of appreciation.",
-    trayectoria_title: "My Journey",
-    trayectoria_text: "Years of growth, learning, and unforgettable experiences that shaped who I am today.",
     playlist_title: "Playlist",
     playlist_text: "Help set the tone for the evening. Add the song that belongs on tonight's soundtrack — the one that can't be left out.",
     btn_playlist: "Add a song",
@@ -1296,7 +1219,7 @@ const translations = {
     btn_wish_submit: "Send",
     wishes_empty: "No wishes yet. Be the first to leave one.",
     rsvp_title: "RSVP",
-    rsvp_intro: "Your presence would make this evening truly unforgettable. Please confirm your attendance by June 24th.",
+    rsvp_intro: "Your presence will make this celebration even more special. Please confirm your attendance.",
     rsvp_label_nombre: "Guest name",
     rsvp_label_asistencia: "Will you be joining us?",
     rsvp_si: "Absolutely, I'll be there",
@@ -1316,7 +1239,7 @@ const translations = {
     wa_si: "Hi! This is {nombre}. I'm happy to confirm my attendance at Marco Antonio's celebration on August 8th. I'll be attending with {pases} {pases_label}.",
     wa_no: "Hi! This is {nombre}. Unfortunately, I won't be able to attend Marco Antonio's celebration on August 8th.",
     calendar_url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Marco%20Antonio%27s%20Birthday&dates=20270808T190000/20270809T000000&ctz=America/Guatemala&details=Join%20me%20to%20celebrate%20my%20birthday.&location=KM%2081.1%20Ruta%20Nacional%2014%2C%20Alotenango%2C%20Sacatep%C3%A9quez.",
-    frase_final: "Excellence speaks for itself — and the best part? Tonight, we get to celebrate it together.",
+    frase_final: "The best birthdays are filled with laughter, hugs, and special people. Thank you for being part of this day.",
   }
 };
 

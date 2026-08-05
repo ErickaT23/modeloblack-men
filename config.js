@@ -1,6 +1,6 @@
 const config = {
     event: {
-        defaultEventId: "promocion-anthonyjr-2026",
+        defaultEventId: "cumple-marco-antonio-2027",
         eventIdParam: "eventId",
         legacyFallback: {
             read: false,
@@ -48,7 +48,7 @@ const config = {
     },
 
     footer: {
-        hashtag: "#AnthonyJrLopez",
+        hashtag: "#MarcoAntonio2027",
         instagramUrl: "https://instagram.com/thetwodesign",
         facebookUrl: "https://facebook.com/thetwodesign",
         marcaTexto: "Diseño",

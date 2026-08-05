@@ -1,75 +1,15 @@
 import { subscribeToConfirmations, subscribeToInvitados } from "./database.js";
 
 const guestDirectorySeed = {
-    "1": { nombre: "Miguel Núñez y Familia", pases: 3 },
-    "2": { nombre: "Hendry Solís y Familia", pases: 3 },
-    "3": { nombre: "Guido Núñez y Silvia Lescano", pases: 2 },
-    "4": { nombre: "Karina Montoya", pases: 1 },
-    "5": { nombre: "Julio Carrillo y Esposa", pases: 2 },
-    "6": { nombre: "Alex Salazar y Esposa", pases: 2 },
-    "7": { nombre: "René Andino y Esposa", pases: 2 },
-    "8": { nombre: "Franklin Fiallos y Esposa", pases: 2 },
-    "9": { nombre: "Lourdes Fiallos", pases: 2 },
-    "10": { nombre: "Fernanda Lescano", pases: 2 },
-    "11": { nombre: "Luis Balladares y Esposa", pases: 2 },
-    "12": { nombre: "Danilo Jordan y Esposa", pases: 2 },
-    "13": { nombre: "Byron Ulloa y Esposa", pases: 2 },
-    "14": { nombre: "Mario Núñez y Esposa", pases: 2 },
-    "15": { nombre: "Nelson Núñez y Esposa", pases: 2 },
-    "16": { nombre: "Adriana Acosta y Familia", pases: 3 },
-    "17": { nombre: "Estalin López y Esposa", pases: 2 },
-    "18": { nombre: "Félix Rosero y Esposa", pases: 2 },
-    "19": { nombre: "Ricardo y Esposa", pases: 2 },
-    "20": { nombre: "Juan Ochoa y Esposa", pases: 4 },
-    "21": { nombre: "Carlos Mota y Esposa", pases: 2 },
-    "22": { nombre: "Rosa Rosero", pases: 1 },
-    "23": { nombre: "Jeremy Helsel", pases: 1 },
-    "24": { nombre: "Tony López", pases: 1 },
-    "25": { nombre: "Rodrigo Bayas y Familia", pases: 4 },
-    "26": { nombre: "Miguel Rosero", pases: 1 },
-    "27": { nombre: "Víctor Florence", pases: 2 },
-    "28": { nombre: "Manuela Gill", pases: 1 },
-    "29": { nombre: "Marcos Santana y Esposa", pases: 2 },
-    "30": { nombre: "Guido Reinoso y Esposa", pases: 2 },
-    "31": { nombre: "Nicole Berrios", pases: 1 },
-    "32": { nombre: "Leysha", pases: 1 },
-    "33": { nombre: "Gustavo Silva", pases: 1 },
-    "34": { nombre: "Ben Swann", pases: 1 },
-    "35": { nombre: "Juan and Anna", pases: 2 },
-    "36": { nombre: "Gino Lavarone", pases: 1 },
-    "37": { nombre: "Ángel Villagómez", pases: 2 },
-    "38": { nombre: "Gelena Solano", pases: 2 },
-    "39": { nombre: "Héctor Vides y Esposa", pases: 2 },
-    "40": { nombre: "Natalia D", pases: 2 },
-    "41": { nombre: "Touria y Familia", pases: 2 },
-    "42": { nombre: "Miggy y Esposo", pases: 2 },
-    "43": { nombre: "Whitney", pases: 1 },
-    "44": { nombre: "Benji", pases: 1 },
-    "45": { nombre: "Ms. Befumo", pases: 1 },
-    "46": { nombre: "Marlon Mora y Esposa", pases: 2 },
-    "47": { nombre: "Diego", pases: 1 },
-    "48": { nombre: "James Stauffer", pases: 2 },
-    "49": { nombre: "Ashley Pérez", pases: 1 },
-    "50": { nombre: "Angel Villamos", pases: 1 },
-    "51": { nombre: "Tommy and Riley", pases: 2 },
-    "52": { nombre: "Owen and Mecenna", pases: 2 },
-    "53": { nombre: "Married by Roxy", pases: 2 },
-    "54": { nombre: "Beatriz and Héctor", pases: 2 },
-    "55": { nombre: "Shane", pases: 1 },
-    "56": { nombre: "Drew", pases: 2 },
-    "57": { nombre: "Joe Matenti", pases: 2 },
-    "58": { nombre: "Jessica Alvarado", pases: 2 },
-    "59": { nombre: "Ana", pases: 1 },
-    "60": { nombre: "Kevin", pases: 1 },
-    "61": { nombre: "Ray", pases: 1 },
-    "62": { nombre: "Martín", pases: 1 },
-    "63": { nombre: "Sergio Meza y Esposa", pases: 2 },
-    "64": { nombre: "Harrison and Kayla", pases: 2 },
-    "65": { nombre: "Bailee", pases: 1 }
+    "1": { nombre: "Andrea Morales", pases: 2 },
+    "2": { nombre: "Carlos Herrera", pases: 1 },
+    "3": { nombre: "Familia López García", pases: 4 },
+    "4": { nombre: "Sofía Ramírez", pases: 2 },
+    "5": { nombre: "Daniela y José", pases: 2 }
 };
 
 const guestDirectoriesByEvent = {
-    "promocion-anthonyjr-2026": guestDirectorySeed
+    "cumple-marco-antonio-2027": guestDirectorySeed
 };
 
 window.LocalGuestSeeds = {
@@ -83,7 +23,7 @@ function resolveDashboardEventContext() {
     const externalConfig = window.config || {};
     const eventConfig = externalConfig.event || {};
     const eventIdParam = String(eventConfig.eventIdParam || "eventId").trim() || "eventId";
-    const defaultEventId = String(eventConfig.defaultEventId || "promocion-anthonyjr-2026").trim() || "promocion-anthonyjr-2026";
+    const defaultEventId = String(eventConfig.defaultEventId || "cumple-marco-antonio-2027").trim() || "cumple-marco-antonio-2027";
     const params = new URLSearchParams(window.location.search || "");
     const fromQuery = String(params.get(eventIdParam) || "").trim();
     const fromWindow = String(

@@ -1,5 +1,5 @@
 (function () {
-    const LEGACY_ADMIN_KEY = "TD-ADMIN-2026";
+    const LEGACY_ADMIN_KEY = "twodesign123";
     const ADMIN_KEY = String(
         window.config
         && window.config.admin
@@ -60,7 +60,7 @@
             window.config
             && window.config.event
             && window.config.event.defaultEventId
-            || "promocion-anthonyjr-2026"
+            || "cumple-marco-antonio-2027"
         ).trim();
 
         return queryEventId || defaultEventId;
